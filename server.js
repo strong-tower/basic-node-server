@@ -22,7 +22,7 @@ app.use((req, ref, next) => {
   });
 });
 
-app.use((req, res) => res.render('maintenance.hbs'));
+// app.use((req, res) => res.render('maintenance.hbs'));
 
 app.use(express.static(`${__dirname}/public`));
 
@@ -37,6 +37,13 @@ app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
     bodyText: 'We are passionate about great software!',
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects',
+    bodyText: 'You can check the project settings!',
   });
 });
 
